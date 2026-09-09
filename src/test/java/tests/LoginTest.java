@@ -16,5 +16,6 @@ public class LoginTest {
         Assert.assertEquals(actualResult, expectedResult);
 
         System.out.println("Login test passed");
+        System.out.println("Running Jenkins CI Test");
     }
 }
