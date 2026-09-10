@@ -17,5 +17,7 @@ public class LoginTest {
 
         System.out.println("Login test passed");
         System.out.println("Running Jenkins CI Test");
+
+        Assert.fail("Intentional failure for Jenkins CI testing");
     }
 }
