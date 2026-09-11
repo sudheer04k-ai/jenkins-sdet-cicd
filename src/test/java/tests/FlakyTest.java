@@ -1,5 +1,6 @@
 package tests;
 
+import listeners.RetryAnalyzer;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -7,7 +8,7 @@ import java.util.Random;
 
 public class FlakyTest {
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void flakyTest() {
 
         boolean pass = new Random().nextBoolean();
