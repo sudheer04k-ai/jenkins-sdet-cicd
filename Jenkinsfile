@@ -27,12 +27,16 @@ pipeline {
                 sh 'mvn clean test'
             }
         }
+
+        stage('Publish Test Results') {
+            steps{
+                junit 'target/surefire-reports/junitreports/*.xml'
+            }
+        }
     }
 
     post {
         always {
-            junit 'target/surefire-reports/junitreports/*.xml'
-
             archiveArtifacts artifacts: 'target/surefire-reports/**',
                     allowEmptyArchive: true
         }
